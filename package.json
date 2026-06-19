@@ -1,0 +1,13 @@
+{
+  "name": "twitch-spoiler-detector-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension prototype for real-time Twitch live chat spoiler detection using Boyer-Moore and Regular Expression.",
+  "type": "module",
+  "scripts": {
+    "evaluate": "node scripts/evaluate.js",
+    "test:bm": "node scripts/testBoyerMoore.js"
+  },
+  "keywords": ["twitch", "spoiler", "boyer-moore", "regex", "string-matching"],
+  "author": "",
+  "license": "MIT"
+}

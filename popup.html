@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twitch Spoiler Detector</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        width: 280px;
+        margin: 0;
+        padding: 14px;
+        background: #18181b;
+        color: #f4f4f5;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: 16px;
+        line-height: 1.25;
+        font-weight: 700;
+      }
+
+      .status {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #3f3f46;
+        border-radius: 8px;
+        background: #27272a;
+      }
+
+      .label {
+        color: #a1a1aa;
+        font-size: 12px;
+      }
+
+      #statusText {
+        font-weight: 700;
+      }
+
+      #logText {
+        margin: 0 0 12px;
+        color: #d4d4d8;
+        font-size: 12px;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      button {
+        min-height: 34px;
+        border: 0;
+        border-radius: 8px;
+        padding: 8px 10px;
+        color: #ffffff;
+        background: #52525b;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #71717a;
+      }
+
+      #toggleBtn {
+        grid-column: 1 / -1;
+        background: #9146ff;
+      }
+
+      #toggleBtn:hover {
+        background: #772ce8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Twitch Spoiler Detector</h1>
+
+    <div class="status">
+      <span class="label">Status</span>
+      <span id="statusText">Loading</span>
+    </div>
+
+    <p id="logText">Loading logs</p>
+
+    <div class="actions">
+      <button id="toggleBtn" type="button">Activate</button>
+      <button id="clearBtn" type="button">Clear Logs</button>
+      <button id="downloadBtn" type="button">Download CSV</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

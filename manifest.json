@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Twitch Spoiler Detector",
+  "version": "1.0.0",
+  "description": "Detect and blur potential movie/anime spoilers in Twitch live chat using Boyer-Moore and Regular Expression.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://www.twitch.tv/*"],
+  "action": {
+    "default_title": "Twitch Spoiler Detector",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.twitch.tv/*"],
+      "js": [
+        "src/boyerMoore.js",
+        "src/regexMatcher.js",
+        "src/rules.js",
+        "src/detector.js",
+        "src/logger.js",
+        "src/contentScript.js"
+      ],
+      "css": ["src/styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["data/*.json"],
+      "matches": ["https://www.twitch.tv/*"]
+    }
+  ]
+}
